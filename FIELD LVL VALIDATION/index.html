@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Facebook Registration Form</title>
+    <style>
+      form {
+        width: 400px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="text"], input[type="email"], input[type="password"], select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      input[type="submit"] {
+        background-color: #3B5998;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #2F477A;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Facebook Registration Form</h1>
+    <form id="myForm" onsubmit="return validateForm()">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" required>
+      
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Select--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      
+      <input type="submit" value="Register">
+    </form>
+    
+    <script>
+      function validateForm() {
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var gender = document.getElementById("gender").value;
+        
+        if (fname == "") {
+          alert("First name must be filled out");
+          return false;
+        }
+        
+        if (lname == "") {
+          alert("Last name must be filled out");
+          return false;
+        }
+        
+        if (email == "") {
+          alert("Email must be filled out");
+          return false;
+        }
+        
+        {
+  else if (!email.includes("@")) {
+    alert("Email must contain @ symbol");
+    return false;
+  
+        }
+        if (password == "") {
+          alert("Password must be filled out");
+          return false;
+        }
+        
+        if (gender == "") {
+          alert("Gender must be selected");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
